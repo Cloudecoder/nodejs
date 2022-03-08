@@ -6,13 +6,13 @@ pipeline {
    
      stage('Installing Package') { 
         steps { 
-           sh 'cd /home/ubuntu && npm -f install' 
+           cd /home/ubuntu && npm -f install 
         }
      }
 
       stage("Deploy application") { 
          steps { 
-           sh 'cd /home/ubuntu && pm2 -f start server.js'
+           cd /home/ubuntu && pm2 -f start server.js
          }
      }
   
